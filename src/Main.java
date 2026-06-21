@@ -1,0 +1,170 @@
+public class Main {
+
+
+    public static void main(String[] args) {
+
+
+//        double first = 20.00;
+//        double second = 80.00;
+//
+//        double result = (first + second) * 100;
+//
+//        double remainder = result % 40.00;
+//
+//        boolean isRemainder;
+//
+//        if (remainder == 0) {
+//            isRemainder = true;
+//            System.out.println(remainder);
+//        } else {
+//            isRemainder = false;
+//            System.out.println("Got some remainder");
+//        }
+
+
+//
+//        interface Pet {
+//            void play();
+//
+//            default  void info() {
+//                System.out.println("This is a pet");
+//            }
+//        }
+//
+//        class Cat implements Pet {
+//            public void play() {
+//                System.out.println("The cat is playing.");
+//            }
+//        }
+//
+//        new Cat().info();
+
+
+//        boolean isDomestic = false;
+//
+//        String S = (isDomestic) ? "1" : "2";
+
+
+//        System.out.println("Hello, Daniel");
+//
+//        boolean isAlien = false;
+//
+//        if (!isAlien) {
+//            System.out.println("It is not an alien");
+//            System.out.println("It is an alien");
+//        }
+//
+//        int value = 0;
+//
+//        value++;
+
+
+//        int newVal = 50;
+//        if (newVal = 50) {}
+
+
+//        boolean isCar = true;
+//
+//
+//        String name =  "";
+//
+//      boolean accurate =  name == "Daniel" ? true : false;
+
+
+//        double myFirstDouble  = 20.00d;
+//        double mySecondDouble  = 80.00d;
+//        double  answer  = (myFirstDouble + mySecondDouble) * 100.00d;
+//        System.out.println("answer: " + answer);
+//
+//
+//        double remainder = answer % 40.00d;
+//        System.out.println("remainder: " + remainder);
+//
+//
+//       boolean val;
+//
+//      if(remainder == 0.0) {
+//           val = true;
+//        } else {
+//            val = false;
+//        }
+//
+//       boolean val = (remainder == 0.0) ? true : false;
+//
+//        System.out.println("bool val: " + val);
+
+
+//        boolean gameOver = true;
+//        int score = 10_000;
+//        int levelCompleted = 8;
+//        int bonus = 200 ;
+//
+//        int finalScore = score;
+//
+//        if (gameOver) {
+//            finalScore += (levelCompleted * bonus);
+//            System.out.println("Final Score: " + finalScore);
+//        }
+
+
+//        boolean gameOver = true;
+//        int score = 800;
+//        int levelCompleted = 5;
+//        int bonus = 100;
+//
+//
+//        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+//
+//        System.out.println("Your final score was " + highScore);
+//
+//        score = 10000;
+//        levelCompleted = 8;
+//        bonus = 200;
+//
+//        System.out.println("Your final score was " +
+//                calculateScore(gameOver, score, levelCompleted, bonus));
+
+
+//////////////////////////////////
+
+        String playerName = "Daniel";
+        int playerPosition = 1;
+        int playerScore = 1500;
+
+        displayHighScore(playerName, playerPosition);
+        int highScore = calculateHighScorePosition(playerScore);
+        System.out.println("Your high score was " + highScore);
+
+    }
+
+
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+        int finalScore = score;
+
+        if (gameOver) {
+            finalScore += (levelCompleted * bonus);
+            finalScore += 1000;
+
+
+        }
+
+        return finalScore;
+    }
+
+    public static void displayHighScore(String playerName, int playerPosition) {
+        System.out.println(playerName + " managed to get into position " + playerPosition + " on the high score list");
+    }
+
+    public static int calculateHighScorePosition(int playerScore) {
+
+        if (playerScore >= 1000) {
+            return 1;
+        } else if (playerScore >= 500 && playerScore <= 1000) {
+            return 2;
+        } else if (playerScore >= 100 && playerScore <= 500) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
+}
