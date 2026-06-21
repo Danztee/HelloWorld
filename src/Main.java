@@ -135,6 +135,11 @@ public class Main {
 //        Long result = toMilesPerHour(75.114);
 //        System.out.println(result);
 
+//        printMegaBytesAndKiloBytes(5000);
+
+        boolean result = shouldWakeUp(true, -1);
+        System.out.println(result);
+
     }
 
 
@@ -191,5 +196,29 @@ public class Main {
         }
     }
 
-    public static void printMegaBytesAndKiloBytes(int kiloBytes) {}
+    public static void printMegaBytesAndKiloBytes(int kiloBytes) {
+        System.out.println("KiloBytes: " + kiloBytes);
+
+        if (kiloBytes < 0) {
+            System.out.println("Invalid Value");
+            return;
+        }
+
+        int mb = kiloBytes / 1024;
+        int remainder = kiloBytes % 1024;
+
+        System.out.println(kiloBytes + "KB = " + mb + "MB and " + remainder + "KB");
+    }
+
+    public static boolean shouldWakeUp(boolean barking, int hourOfDay) {
+        if (hourOfDay < 0 || hourOfDay > 23) {
+            return false;
+        }
+
+        if (barking && (hourOfDay < 8 || hourOfDay > 22)) {
+            return true;
+        }
+
+        return false;
+    }
 }
