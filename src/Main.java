@@ -127,13 +127,13 @@ public class Main {
 
 //////////////////////////////////
 
-        String playerName = "Daniel";
-        int playerPosition = 1;
-        int playerScore = 1500;
+//        displayHighScore("Daniel", 1);
+//        int highScore = calculateHighScorePosition(1500);
+//
+//        System.out.println("Your high score was " + highScore);
 
-        displayHighScore(playerName, playerPosition);
-        int highScore = calculateHighScorePosition(playerScore);
-        System.out.println("Your high score was " + highScore);
+//        Long result = toMilesPerHour(75.114);
+//        System.out.println(result);
 
     }
 
@@ -159,12 +159,37 @@ public class Main {
 
         if (playerScore >= 1000) {
             return 1;
-        } else if (playerScore >= 500 && playerScore <= 1000) {
+        } else if (playerScore >= 500) {
             return 2;
-        } else if (playerScore >= 100 && playerScore <= 500) {
+        } else if (playerScore >= 100) {
             return 3;
         } else {
             return 4;
         }
     }
+
+
+    public static void checkNumber(int number) {
+        if (number > 0) {
+            System.out.println("positive");
+        } else if (number < 0) {
+            System.out.println("negative");
+
+        } else {
+            System.out.println("zero");
+        }
+    }
+
+    public static long toMilesPerHour(double kilometersPerHour) {
+        if (kilometersPerHour < 0) {
+            return -1;
+        } else {
+
+            double result = kilometersPerHour * 0.621371;
+
+            return Math.round(result);
+        }
+    }
+
+    public static void printMegaBytesAndKiloBytes(int kiloBytes) {}
 }
