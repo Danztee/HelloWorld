@@ -1,7 +1,15 @@
 public class Main {
 
-
     public static void main(String[] args) {
+//
+//        HashMap<String, String> stateAndCapitals = new HashMap<String, String>();
+//        stateAndCapitals.put("Abia", "Umahia");
+//        stateAndCapitals.put("Adamawa", "Yola");
+//        stateAndCapitals.put("Awka", "Uyo");
+//        stateAndCapitals.put("Awka", "Uyo");
+//
+//
+//        System.out.println(stateAndCapitals);
 
 
 //        double first = 20.00;
@@ -137,9 +145,19 @@ public class Main {
 
 //        printMegaBytesAndKiloBytes(5000);
 
-        boolean result = shouldWakeUp(true, -1);
-        System.out.println(result);
+//        boolean result = shouldWakeUp(true, -1);
+//        System.out.println(result);
 
+//        boolean result = isLeapYear(2000);
+//        System.out.println(result);
+
+
+//        boolean result = areEqualByThreeDecimalPlaces(-3.1756, -3.1756);
+//        System.out.println(result);
+
+
+        boolean result = hasEqualSum(1, -1, 0);
+        System.out.println(result);
     }
 
 
@@ -172,7 +190,6 @@ public class Main {
             return 4;
         }
     }
-
 
     public static void checkNumber(int number) {
         if (number > 0) {
@@ -221,4 +238,60 @@ public class Main {
 
         return false;
     }
+
+    public static boolean isLeapYear(int year) {
+
+        if (year <= 1 || year > 9999) {
+            return false;
+        }
+
+        if (year % 400 == 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean areEqualByThreeDecimalPlaces(double one, double two) {
+
+        long firstRound = (long) one * 1000;
+        long secondRound = (long) one * 1000;
+
+
+        if (firstRound == secondRound) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public static boolean hasEqualSum(int first, int second, int third) {
+
+//        if ((first + second) == third) {
+//            return true;
+//        }
+//
+
+        return (first + second) == third;
+    }
+
+    public static boolean hasTeen(int first, int second, int third) {
+
+        return isTeen(first) || isTeen(second) || isTeen(third);
+
+//        int range = 13 - 19;
+//        if (first < range || second <range || third <range) {
+//            return true;
+//        }else  {
+//            return false;
+//        }
+
+
+    }
+
+    public static boolean isTeen(int val) {
+        return val > 12 && val < 20;
+    }
+
 }
