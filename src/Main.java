@@ -158,6 +158,40 @@ public class Main {
 
         boolean result = hasEqualSum(1, -1, 0);
         System.out.println(result);
+
+
+        for (double i = 7.5; i < 10; i += 0.25) {
+            double interestAmount = calculateInterest(100.00, i);
+
+            if (interestAmount > 8.5) {
+                return;
+            }
+        }
+
+
+        int count = 0;
+
+        for (int i = 10; i <= 50; i++) {
+            if (isPrime(i)) {
+                System.out.println("number " + i + " is a prime number");
+                count++;
+
+                if(count == 3) {
+                    System.out.println("Found 3 p exiting for loop");
+                    break;
+                }
+            }
+
+        }
+    }
+
+
+    public static boolean isPrime(int wholeNumber) {
+
+        if (wholeNumber <= 2) {
+            return (wholeNumber == 2);
+        }
+        return true;
     }
 
 
@@ -292,6 +326,11 @@ public class Main {
 
     public static boolean isTeen(int val) {
         return val > 12 && val < 20;
+    }
+
+
+    public static double calculateInterest(double amount, double interestRate) {
+        return amount * (interestRate / 100);
     }
 
 }
