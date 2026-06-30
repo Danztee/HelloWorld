@@ -1,6 +1,69 @@
 public class Main {
 
+    public static boolean isEvenNumber(int number) {
+        if ((number % 2) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
+        int number = 4;
+        int finishedNumber = 20;
+        int evenCount = 0;
+        int oddCount = 0;
+
+        while (number <= finishedNumber) {
+            number++;
+            if (!isEvenNumber(number)) {
+                oddCount++;
+                continue;
+            }
+
+            System.out.println("Even Number " + number);
+            evenCount++;
+
+            if(evenCount >= 5) {
+                break;
+            }
+        }
+
+        System.out.println("Total odd numbers found " + oddCount);
+        System.out.println("Total even numbers found " + evenCount);
+
+
+//        for (int number = 100; number < 200; number += 10) {
+//            System.out.println("Number =" + number);
+//        }
+
+//        int number = 0;
+//        boolean isReady = false;
+//        while (number < 50) {
+//            number += 5;
+//            System.out.print(number + "_");
+//        }
+
+//        int countOfMatches = 0;
+//        int sumOfMatches = 0;
+//
+//        for (int loopNumber = 1; loopNumber < 1000; loopNumber++) {
+//
+//            if ((loopNumber % 3 == 0) && (loopNumber % 5 == 0)) {
+//                countOfMatches++;
+//                sumOfMatches += loopNumber;
+//
+//                System.out.println("Found a match = " + loopNumber);
+//
+//                if(countOfMatches == 5) {
+//                    break;
+//                }
+//
+//            }
+//
+//            System.out.println("Sum = " + sumOfMatches);
+//
+//        }
 //
 //        HashMap<String, String> stateAndCapitals = new HashMap<String, String>();
 //        stateAndCapitals.put("Abia", "Umahia");
@@ -176,7 +239,7 @@ public class Main {
                 System.out.println("number " + i + " is a prime number");
                 count++;
 
-                if(count == 3) {
+                if (count == 3) {
                     System.out.println("Found 3 p exiting for loop");
                     break;
                 }
